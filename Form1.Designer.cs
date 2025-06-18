@@ -43,6 +43,7 @@
 			label8 = new Label();
 			label9 = new Label();
 			button1 = new Button();
+			plusButton = new Button();
 			SuspendLayout();
 			// 
 			// textBox1
@@ -52,6 +53,16 @@
 			textBox1.Name = "textBox1";
 			textBox1.Size = new Size(225, 33);
 			textBox1.TabIndex = 0;
+			// Создание текстового поля для вывода
+			outputTextBox = new TextBox();
+			outputTextBox.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			outputTextBox.Name = "outputTextBox";
+			outputTextBox.Multiline = true;
+			outputTextBox.ScrollBars = ScrollBars.Vertical;
+			outputTextBox.Location = new Point(originalWidth+outputTextBox.Size.Width, 0);
+			outputTextBox.Size = new Size(300, this.Height);
+			outputTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+			outputTextBox.ReadOnly = true;
 			// 
 			// label1
 			// 
@@ -188,11 +199,23 @@
 			button1.UseVisualStyleBackColor = true;
 			button1.Click += button1_Click;
 			// 
+			// plusButton
+			// 
+			plusButton.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			plusButton.Location = new Point(342, 349);
+			plusButton.Name = "plusButton";
+			plusButton.Size = new Size(40, 31);
+			plusButton.TabIndex = 15;
+			plusButton.Text = ">>";
+			plusButton.UseVisualStyleBackColor = true;
+			plusButton.Click += button2_Click;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(394, 392);
+			Controls.Add(plusButton);
 			Controls.Add(button1);
 			Controls.Add(label9);
 			Controls.Add(label8);
@@ -208,6 +231,7 @@
 			Controls.Add(label2);
 			Controls.Add(label1);
 			Controls.Add(textBox1);
+			Controls.Add(outputTextBox);
 			Name = "Form1";
 			Text = "Direct Algotithms App";
 			Load += Form1_Load;
@@ -232,5 +256,7 @@
 		private Label label8;
 		private Label label9;
 		private Button button1;
+		private Button plusButton;
+		private TextBox outputTextBox;
 	}
 }
